@@ -1,0 +1,12 @@
+Google Fonts Code:
+@import url('https://fonts.googleapis.com/css?family=Fira+Code:400,500,600,700&display=swap');
+
+Links:
+https://fonts.google.com/
+https://fonts.google.com/specimen/Fira+Code
+https://rsms.me/inter/
+https://twitter.com/typeparty_
+https://www.freshfonts.io/
+
+Image by Oleg Laptev
+https://unsplash.com/photos/7jQh3EiS8Bs
