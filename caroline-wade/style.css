@@ -1,6 +1,11 @@
+@font-face {
+  font-family: Bandeins Strange;
+  src: url("./assets/bandeins-strange-variable.ttf");
+}
+
 body {
-  font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 60px;
+  font-family: Bandeins Strange, sans-serif;
   line-height: 1.5;
 
   background: #000;
@@ -17,9 +22,8 @@ img {
 }
 
 h1 {
-  font-size: 24px;
-  font-weight: 700;
-
+  margin: 0;
+  font-size: 60px;
   position: fixed;
   top: 80px;
   left: 80px;
@@ -34,8 +38,15 @@ nav {
 }
 
 a {
+  font-size: 60px;
   color: #fff;
   text-decoration: none;
-  font-size: 24px;
   margin: 0 0 0 30px;
+  font-variation-settings: "wght" 100, "wdth" 100;
+  transition: font-variation-settings 0.2s;
+}
+
+a:hover {
+  transition: font-variation-settings 0.2s;
+  font-variation-settings: "wght" 900, "wdth" 200;
 }
