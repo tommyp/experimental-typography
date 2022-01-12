@@ -1,0 +1,9 @@
+Links:
+https://p5js.org/
+https://p5js.org/reference/
+https://github.com/floriankarsten/space-grotesk
+
+Colors:
+Yellow: #ecf072
+Red: #ef5236
+
