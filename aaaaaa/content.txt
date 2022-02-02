@@ -1,0 +1,11 @@
+Links:
+https://p5js.org/
+https://p5js.org/reference/
+https://github.com/floriankarsten/space-grotesk
+https://dia.tv/
+https://timrodenbroeker.de/
+
+Colors:
+Yellow: #e84e3c
+Red: #f3c043
+
