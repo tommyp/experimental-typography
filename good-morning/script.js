@@ -1,6 +1,8 @@
 let font;
 let graphic;
 
+const waveInput = document.querySelector('input.wave');
+
 const color = '#2fe4c2';
 const bgColor = '#293752';
 
@@ -28,7 +30,7 @@ function draw() {
 
   for (let x = 0; x < 120; x++) {
     for (let y = 0; y < 60; y++) {
-      const wave = 0.05;
+      const wave = waveInput.value;
       const distortionX = sin(frameCount * wave + x * 0.5 + y * 0.3) * 10;
       const distortionY = sin(frameCount * wave + x * 0.5 + y * 0.5) * 5;
 
