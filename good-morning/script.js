@@ -18,7 +18,7 @@ function setup() {
   graphic.textSize(300);
   graphic.textLeading(300);
   graphic.textAlign(CENTER, CENTER);
-  graphic.text('fuck the\ntories', 600, 300);
+  graphic.text('Good\nMorning', 600, 250);
 }
 
 function draw() {
@@ -26,22 +26,20 @@ function draw() {
 
   const tileSize = 10;
 
-  for (let x = 0; x < width / tileSize; x++) {
-    for (let y = 0; y < height / tileSize; y++) {
-      let distortion = sin(frameCount * 0.05 + x * 0.3) * 50;
+  for (let x = 0; x < 120; x++) {
+    for (let y = 0; y < 60; y++) {
+      const wave = 0.05;
+      const distortionX = sin(frameCount * wave + x * 0.5 + y * 0.3) * 10;
+      const distortionY = sin(frameCount * wave + x * 0.5 + y * 0.5) * 5;
 
-      if (x % 2 == 0) {
-        distortion = cos(frameCount * 0.05 + x * 0.3) * -50;
-      }
-
-      const sx = x * tileSize;
-      const sy = y * tileSize;
-      const sw = Math.max(tileSize + distortion, tileSize);
-      const sh = Math.max(tileSize + distortion, tileSize);
+      const sx = x * tileSize + distortionX;
+      const sy = y * tileSize + distortionY;
+      const sw = tileSize;
+      const sh = tileSize;
 
       const dx = x * tileSize;
       const dy = y * tileSize;
-      const dw = Math.max(tileSize + distortion, tileSize);
+      const dw = tileSize;
       const dh = tileSize;
 
       image(graphic, dx, dy, dw, dh, sx, sy, sw, sh);
