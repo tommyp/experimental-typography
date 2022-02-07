@@ -15,7 +15,7 @@ function setup() {
   graphic.textAlign(CENTER, CENTER);
   graphic.textSize(500);
 
-  graphic.text('oas', 600, 260);
+  graphic.text('ooo', 600, 260);
 }
 
 function draw() {
@@ -25,9 +25,22 @@ function draw() {
   const tileSize = 600 / rows;
 
   for (let y = 0; y < rows; y++) {
-    const distortion = sin(frameCount * 0.05 + y) * 50;
+    // const distortion = sin(frameCount * 0.05 + y) * 50;
 
-    let position = winMouseX / windowWidth;
+    // let position = winMouseX / windowWidth;
+    let position = frameCount;
+
+    // loop over 60 frames
+    position = position % 120;
+
+    // if on the back half we reverse
+    if (position >= 60) {
+      position = 120 - position;
+    }
+
+    // want to make sure
+    position = position / 60;
+
     position = easeInOutCubic(position);
 
     const sx = 0;
