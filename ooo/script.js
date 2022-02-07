@@ -25,10 +25,15 @@ function draw() {
   const tileSize = 600 / rows;
 
   for (let y = 0; y < rows; y++) {
+    const distortion = sin(frameCount * 0.05 + y) * 50;
+
+    let position = winMouseX / windowWidth;
+    position = easeInOutCubic(position);
+
     const sx = 0;
-    const sy = 0;
+    const sy = y * tileSize * position;
     const sw = 1200;
-    const sh = 600;
+    const sh = tileSize * position + (600 - tileSize) * (1 - position);
 
     const dx = 0;
     const dy = y * tileSize;
