@@ -1,7 +1,7 @@
 const headerTags = document.querySelectorAll('h1, h2');
 
 const runRandom = (tag) => {
-  const originalContent = tag.innerHTML;
+  const originalContent = tag.dataset.original;
   let newContent = '';
   let num = 0;
   const randomList = 'abcdefghijklmnopqrstuvwxyz!@£$%^&*'.split('');
@@ -13,6 +13,7 @@ const runRandom = (tag) => {
 
     if (tag.innerHTML == originalContent) {
       clearInterval(addInterval);
+      clearInterval(randomInterval);
     }
   }, 100);
 
@@ -27,6 +28,20 @@ const runRandom = (tag) => {
   }, 50);
 };
 
+const observer = new IntersectionObserver(
+  (entires) => {
+    entires.forEach((entry) => {
+      if (entry.intersectionRatio > 0.5) {
+        runRandom(entry.target);
+      }
+    });
+  },
+  {
+    threshold: [0, 0.5, 1],
+  }
+);
+
 headerTags.forEach((heading) => {
-  runRandom(heading);
+  heading.dataset.original = heading.innerHTML;
+  observer.observe(heading);
 });
