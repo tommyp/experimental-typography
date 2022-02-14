@@ -21,7 +21,8 @@ function draw() {
   fill('#f3c043');
 
   points.forEach((point) => {
-    const distortion = createVector(mouseX, mouseY);
+    const distance = createVector(point.x - mouseX, point.y - mouseY);
+    const distortion = distance.mult(40 / distance.mag());
 
     circle(point.x + distortion.x, point.y + distortion.y, 5);
   });
@@ -31,7 +32,10 @@ function draw() {
 
   beginShape();
   points.forEach((point) => {
-    vertex(point.x, point.y);
+    const distance = createVector(point.x - mouseX, point.y - mouseY);
+    const distortion = distance.mult(40 / distance.mag());
+
+    vertex(point.x + distortion.x, point.y + distortion.y);
   });
   endShape();
 }
