@@ -21,7 +21,9 @@ function draw() {
   fill('#f3c043');
 
   points.forEach((point) => {
-    circle(point.x, point.y, 5);
+    const distortion = createVector(mouseX, mouseY);
+
+    circle(point.x + distortion.x, point.y + distortion.y, 5);
   });
 
   noFill();
